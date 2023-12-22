@@ -1,10 +1,9 @@
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
-    print(text)
-    count = word_count(text)
+    total_words = word_count(text)
     letterc = letter_count(text)
-    report(book_path,count)
+    report(book_path,total_words)
     print(letterc)
 
 def word_count(text):
@@ -20,9 +19,9 @@ def letter_count(text):
             letter_dict[letter] = count
     return letter_dict
 
-def report(book_path,count):
+def report(book_path,total_words):
     print(f"--- Begin report of {book_path} ---")
-    print(f"The number of words in the text is {count}\n\n")
+    print(f"The number of words in the text is {total_words}\n\n")
 
 def get_book_text(path):
     with open(path) as f:
